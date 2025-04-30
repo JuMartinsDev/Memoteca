@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { PensamentoComponent } from '../pensamento/pensamento.component';
 import { PensamentoService } from '../pensamento.service';
 import { Pensamento } from '../pensamento';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-listar-pensamentos',
   standalone: true,
-  imports: [RouterLink, CommonModule, PensamentoComponent],
+  imports: [RouterLink, CommonModule, PensamentoComponent, HttpClientModule],
   templateUrl: './listar-pensamentos.component.html',
   styleUrl: './listar-pensamentos.component.css',
 })
@@ -19,7 +20,7 @@ export class ListarPensamentosComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.listar().subscribe((dados) => {
-      console.log('Pensamentos recebidos:', dados); 
+      console.log('Pensamentos recebidos:', dados);
       this.listaPensamentos = dados;
     });
   }
