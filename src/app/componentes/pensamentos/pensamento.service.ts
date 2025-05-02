@@ -1,15 +1,32 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Pensamento } from './pensamento';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PensamentoService {
-  private readonly API = 'http://localhost:3000/pensamentos';
-  private http = inject(HttpClient);
+  private readonly API = 'http://localhost:3000/pensamentos'; // URL do json-server
 
-  listar() {
+  constructor(private http: HttpClient) {}
+
+  listar(): Observable<Pensamento[]> {
     return this.http.get<Pensamento[]>(this.API);
+  }
+
+  criar(pensamento: Pensamento): Observable<Pensamento> {
+    console.log('Enviando pensamento para o servidor:', pensamento);
+    return this.http.post<Pensamento>(this.API, pensamento);
+  }
+
+  excluir(id: string): Observable<Pensamento> {
+    const url = `${this.API}/${id}`
+    return this.http.delete<Pensamento>(url)
+  }
+
+  buscarPorId(id: string): Observable<Pensamento> {
+    const url = `${this.API}/${id}`
+    return this.http.get<Pensamento>(url)
   }
 }

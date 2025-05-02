@@ -1,35 +1,44 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router'; // Adicione esta linha para que o router link do listar pensamento funcione
+import { PensamentoService } from '../../../componentes/pensamentos/pensamento.service';
 import { Pensamento } from '../../../componentes/pensamentos/pensamento';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-criar-pensamento',
-  imports: [FormsModule, RouterLink],
   templateUrl: './criar-pensamento.component.html',
-  styleUrl: './criar-pensamento.component.css'
+  styleUrls: ['./criar-pensamento.component.css']
 })
-export class CriarPensamentoComponent  implements OnInit{
+export class CriarPensamentoComponent implements OnInit {
+  pensamento: Pensamento = {
+    conteudo: '',
+    autoria: '',
+    modelo: ''
+  };
 
-  //pensamento é atributo que é um objeto
-  pensamento: Pensamento= {
-    id: 0,
-    conteudo: 'Aprendendo Angular',
-    autoria: 'Dev',
-    modelo: '' //precisamos relacionar esses modelos e tudo aos imputs feitos pelo user
+  constructor(
+    private pensamentoService: PensamentoService,
+    private router: Router
+  ) {}
 
+  ngOnInit(): void {}
+
+  // Método para criar o pensamento e redirecionar
+  criarPensamento(): void {
+    this.pensamentoService.criar(this.pensamento).subscribe({
+      next: (res) => {
+        console.log('Pensamento criado:', res);
+        alert('Pensamento criado com sucesso!');
+        this.router.navigate(['/listarPensamento']); // Redireciona para o mural
+      },
+      error: (err) => {
+        console.error('Erro ao criar pensamento:', err);
+        alert('Erro ao criar o pensamento. Tente novamente.');
+      }
+    });
   }
 
-  ngOnInit(): void {
+  // Método de cancelamento, apenas volta ao mural
+  cancelarPensamento(): void {
+    this.router.navigate(['/listarPensamento']);
   }
-
-  criarPensamento(){
-    alert("Novo pensamento criado")
-  }
-
-  cancelarPensamento(){
-    alert("Pensamento deletado")
-  }
-
 }
