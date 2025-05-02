@@ -14,9 +14,7 @@ import { RouterModule } from '@angular/router';
     RouterOutlet,
     CabecalhoComponent,
     RodapeComponent,
-    CriarPensamentoComponent,
     FormsModule,
-    ListarPensamentosComponent,
     RouterModule
     ],
   templateUrl: './app.component.html',

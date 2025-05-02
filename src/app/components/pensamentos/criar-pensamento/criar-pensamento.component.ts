@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { PensamentoService } from '../../../componentes/pensamentos/pensamento.service';
 import { Pensamento } from '../../../componentes/pensamentos/pensamento';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-criar-pensamento',
+  imports: [CommonModule, FormsModule],
   templateUrl: './criar-pensamento.component.html',
   styleUrls: ['./criar-pensamento.component.css']
 })
