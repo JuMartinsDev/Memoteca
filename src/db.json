@@ -1,28 +1,16 @@
 {
   "pensamentos": [
     {
-      "id": "1",
-      "conteudo": "Que bom que você veio",
-      "autoria": "Ju",
-      "modelo": "modelo1"
-    },
-    {
-      "id": "2",
-      "conteudo": "Estudando Angular",
-      "autoria": "Ju",
+      "id": "3c2f",
+      "conteudo": "Pensamento Teste",
+      "autoria": "Julia",
       "modelo": "modelo2"
     },
     {
-      "id": "3",
-      "conteudo": "Praticando TS",
-      "autoria": "Ju",
+      "id": "cd60",
+      "conteudo": "Aprendendo Angular",
+      "autoria": "Julia",
       "modelo": "modelo3"
-    },
-    {
-      "id": "d039",
-      "conteudo": "Aprendendo ",
-      "autoria": "Dev",
-      "modelo": "modelo1"
     }
   ]
 }

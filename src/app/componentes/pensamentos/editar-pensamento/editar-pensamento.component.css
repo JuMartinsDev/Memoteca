@@ -1,0 +1,151 @@
+.acoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 1rem;
+}
+
+.botao {
+  margin: 5px;
+  margin-top: 20px;
+  width: 200px;
+}
+
+.editar-pensamentos {
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.editar-pensamentos form {
+  background: #C4EDFF;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  margin: 0;
+}
+
+.editar-pensamentos form label {
+  color: #154580;
+  font-weight: bold;
+  margin: 0 0 0.5rem;
+}
+
+.editar-pensamentos form .input {
+  border: none;
+  height: 40px;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.editar-pensamentos form .textarea {
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.container-radio {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+/* RADIO MODEL STYLES WITH INCREASED SPACING */
+.radio-modelo {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  margin: 0 10px;
+  padding: 1rem 0; /* Added padding around each model container */
+}
+
+.radio-modelo > label {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  margin-bottom: 2rem !important; /* Increased space between radio and preview */
+}
+
+.previa-label {
+  display: block;
+  margin: 0 0 1.5rem 0; /* Increased space around "Prévia" text */
+  font-weight: bold;
+  color: #154580;
+  font-size: 0.9rem;
+}
+
+.modelo {
+  background-color: #F8F9FE;
+  padding: 1.2rem; /* Slightly increased padding */
+  width: 100%;
+  margin: 1.5rem 0 2.5rem; /* Increased margins around preview cards */
+  box-sizing: border-box;
+}
+
+.modelo img {
+  width: 25px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.modelo .conteudo {
+  margin: 0.5rem auto;
+  font-size: 0.9rem;
+}
+
+.modelo .autoria {
+  margin: 0.5rem auto;
+  font-size: 0.8rem;
+}
+
+.modelo1 {
+  box-shadow: 5px 5px 0px #154580;
+}
+
+.modelo2 {
+  box-shadow: 5px 5px 0px #6BD1FF;
+}
+
+.modelo3 {
+  box-shadow: 5px 5px 0px #84EEC1;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.custom-radio {
+  border: 1px solid #154580;
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+}
+
+.custom-radio span {
+  width: 15px;
+  height: 15px;
+  background: transparent;
+  border-radius: 50%;
+}
+
+.custom-radio,
+span {
+  transition: 0.3s ease;
+  color: #154580;
+}
+
+input[type='radio']:checked+.custom-radio {
+  border-color: #154580;
+}
+
+input[type='radio']:checked+.custom-radio span {
+  background: #154580;
+}
